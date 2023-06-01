@@ -120,3 +120,7 @@ def get_german_power():
         # cache data locally
         df.to_csv(filename, index=False)
     return df
+
+def get_superstore():
+    '''Get superstore data from csv'''
+    return pd.read_csv('ts_superstore.csv', index_col=0)
