@@ -21,7 +21,7 @@ def prep_superstore(df):
     # set date as index
     df = df.set_index('sale_date').sort_index()
     # create month and day of week columns
-    df = df.assign(month=df.index.month_name(),day_of_week=df.index.day_name())
+    df = df.assign(month=df.index.month,month_name=df.index.month_name(),day_of_week=df.index.day_name())
     # create total for sales
     df = df.assign(sales_total=(df.sale_amount * df.item_price))
     return df
